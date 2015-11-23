@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+
+  "name": "Kindle clipper",
+  "description": "Copy and paste from read.amazon.com",
+  "version": "1.0",
+
+  "content_scripts": [
+    {
+      "matches": ["https://read.amazon.com/static/app/*"],
+      "js": ["clipper.js"],
+      "all_frames": true
+    }
+  ],
+
+  "permissions": [
+    "tabs", "background", "clipboardWrite", "https://read.amazon.com/*"
+  ],
+
+  "web_accessible_resources": ["injected.js"]
+}
